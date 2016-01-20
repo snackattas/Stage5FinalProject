@@ -1,0 +1,19 @@
+.note-header {
+  max-width: 1200px;
+  padding-top: 10px;
+}
+
+.instructions {
+  width: 33%;
+  order: 0;
+}
+
+.note-entry {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.box {
+  max-width: 800px;
+}

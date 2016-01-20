@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- My CSS files -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<title>My notes</title>
+	</head>
+	<body>
+    <div class="grid">
+      <div class="header-color">
+      <div class="centering">
+        <div class="row spiel">
+          <div class="col-md-12">
+            Welcome to my <a class="btn-link" href="https://www.udacity.com/course/intro-to-programming--ud000"> Intro to Udacity</a> final project website!  
+          </div>
+        </div>
+        <div class="row note-header">
+          <div class="text-left col-md-3">
+            Please type in your notes here:
+          </div>
+          <div class="col-md-9 note-entry">
+            <div class="box">
+              <form action="Submit" method="POST">
+                <textarea id="box-size" cols="60" rows="8" placeholder="Type a Lesson, Concept, or Information!" name="note_text"></textarea>
+            </div>
+            <div class="text-center">
+              <b>Note Types</b>
+              <ul class="selector-type text-left">
+                <li>
+                  <label>
+                  <input type="radio" name="type_of_note" value="Lesson" {{ disableLesson }}>
+                    Lesson
+                  </label>
+                </li>
+                <li>
+                  <label>
+                  <input type="radio" name="type_of_note" value="Concept" {{ disableConcept }}>
+                    Concept
+                  </label>
+                </li>
+                <li>
+                  <label>
+                  <input type="radio" name="type_of_note" value="Information" {{ disableInformation }}>
+                    Information
+                  </label>
+                </li>
+                <input type="submit" value="Submit">
+              </ul>
+            </form>
+            {% if error %}
+            <br>
+            <div class="error">You must type in some notes and select a note type before submitting!            </div>
+            {% endif %}
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="lessons centering">
+        <div class="lesson">
+          <h1>Lesson 0: Basics of the Web and HTML</h1>
+          <div class="concept">
+            <h2>HTML</h2>
+            <div class="information">
+              <p>
+                HTML stands for hypertext markup language. What you wrote: 
+              <br>
+                Basically, the internet makes requests to servers via HTTP protocol. 
+                HTTP sends back info to the internet/you in your browser.
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Structure of HTML</h2>
+            <div class="information">
+              <p>
+                HTML is made up of <em>tags</em> and <em>attributes</em>.  
+                Tags that only require an opening tag are called void tags.  
+                Otherwise, most tags require both an opening and closing tag.  
+              <br>
+                A complete tag is referred to as an attribute.
+              </p>
+              <p>
+                There are 2 ways to classify tags: 
+              </p>	
+              <ol>
+                <li>inline tags</li>
+                <li>block tags</li>
+              </ol>
+              <p>
+                <b>Inline tags</b> perform their function directly on the text, with no additional formatting.
+              <br>
+                <b>Block tags</b> put an invisible box around text.  
+                That way CSS or JS elements can refer to the entire region, not just the literal text.
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Links</h2>
+            <div class="information">
+              <p>
+                This is an example of a hyperlink to <a href="http://www.google.com">google</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lesson">
+          <h1>Lesson 1: CSS</h1>
+          <div class="concept">
+            <h2>CSS Philosophy</h2>
+            <div class="information">
+              <p>
+                CSS stands for <b>Cascading Style Sheets</b>.
+              <br>
+                CSS can be said to have a heirarchical structure.  
+                The more specific rule gets applied is the one that <b>MOST</b> describes the elements.
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>CSS Syntax</h2>
+            <div class="information">
+              <p>
+                CSS uses “selectors”.  That's CSS for elements.
+                Elements have a <em>property</em> and a <em>value</em>.
+              <br>
+                CSS selectors can apply to tags, as well as classes and IDs. 
+                When using CSS to refer to a class, the selector must be prefixed with a period.
+              </p>
+              <p>
+                You can use CSS in HTML (although not advised). Like this:
+              </p>
+              <br>
+              <p class="code">
+                <code>
+                  &lt;style&gt;
+                  <br>
+                  <span class="space2">.description {</span>
+                  <span class="space5">color: <span class="color-red">red</span>;</span>
+                  <br>
+                  <span class="space2">}</span>
+                  <br>		
+                  &lt;/style&gt;
+                </code>
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Avoiding Repition in CSS</h2>
+            <div class="information">
+              <p>
+                Because CSS is heirarchical, it's code can be written in such a way to <em>minimize repitition</em>.
+              <br>
+                A couple lines of CSS code can be applied to ALL of the instances 
+                that the tag/class/id are used in the HTML document.
+                So if HTML is written intelligently, with tags/classes/ids consistently applied,
+                the CSS to format that HTML document can be very simple, but will affect the web page widely.
+              </p>
+            </div>
+          </div>
+        </div> 
+        <div class="lesson">
+          <h1>Lesson 2: Python</h1>
+          <div class="concept">
+            <h2>Python Basic Forms</h2>
+            <div class="information">
+              <p>
+                Python's grammar works like this: expression --> operator --> expression.  Assignment works like this: var = expression
+              </p>
+              <p>What’s on the right side will be stored in the left side. If 'var'  is not assigned, and it was used on the right side, it would crash with a  NameError.
+              </p>
+              <p>
+                You can add and multiply strings, but you cannot use them in subtraction or division. If you want decimal output, add a '.' at the end of your number. 
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Python Indexing</h2>
+            <div class="information">
+              <p>
+                You can extract subsequences from strings with brackets. Ex: &lt;string&gt;[<expression>:<expression>]
+              <br>
+                Sample indexing positions:
+              <br>
+                +---+---+---+---+---+---+
+              <br>
+                |&nbsp; P &nbsp;|&nbsp; y &nbsp;|&nbsp; t &nbsp;|&nbsp; h &nbsp;|&nbsp; o &nbsp;|&nbsp; n &nbsp;|
+              <br>
+                +---+---+---+---+---+---+
+              <br>
+                0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;6
+              <br>
+               -6&nbsp;&nbsp;&nbsp;-5&nbsp;&nbsp;&nbsp;-4&nbsp;&nbsp;&nbsp;-3&nbsp;&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;-1
+              <br>
+                You can leave the expression before or after the colon blank
+              </p>
+              </div>
+            </div>
+          <div class="concept">
+            <h2>Python Functions</h2>
+            <div class="information">
+              <p>
+                You start a function with def. Return shows the output.  
+              <br>
+                Functions (or procedures/methods) are ways of accomplishing a task that are meant to be reusable.  All variables in the function don't exist outisde of the function call and the return values.
+              <br>
+                Functions need return statements, otherwise they will just return 'None'
+              </p>
+              <br>
+              <p>
+                Indentation is very important in Python.  Functions and loops are invoked by a ':', and then the python compiler knows we're going into the content of the function by the next indent level.
+              </p>
+              <br>
+              <p>
+                Loops are also very important in Python. <b>'While'</b> loops evaluate a condition and loop until the condition is False.  <b>'For'</b> loops iterate over a list element, and assigns variables to each element in the list until the list is over. <i>'For' loops are the safer of the two</i>
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Aliasing and Mutation</h2>
+            <div class="information">
+              <p>
+                &gt; a = [0,1]
+              <br>
+                &gt; b = a <span class="color-red">&lt;--Aliasing!</span>
+              <br>
+                &gt; a[1]=2 <span class="color-red">&lt;--Mutation!</span>
+              <br>
+                &gt; print a,b
+              <br>
+                [0, 2] [0, 2]
+              <br>
+                &gt; a = [0,3] 
+              <br>
+                &gt; print a,b
+              <br>
+                [0, 3] [0, 2] <span class="color-red">&lt;--Reassigning the original list (a = [0, 3]) does not carry over the change to the aliased variable!</span>
+              </p>
+              <p>
+                A <i>mutable</i> object is an object whose contents can change, like the list shown above.
+              <br>
+                An <i>alias</i> is a second name for a piece of data. In Python, aliasing happens whenever one variable's value is assigned to another variable, because variables are just names that store references to values.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lesson">
+          <h1>Lesson 3: Servers, HTTP, Validating Input, and Jinja2 Templates</h1>
+          <div class="concept">
+            <h2>Dissecting a URL (Uniform Resource Locator)</h2>
+            <div class="information">
+              <p class="no-justify">Take this example url: <code>http://www.udacity.com/css.jpg?color=blue&amp;view=nice#pic_here</code>
+              <ul>
+                <li>Protocol: http</li>
+              <li>Host: www.udacity.com --> This is the sever you want to access</li>
+              <li>Path: /css.jpg --> This is evertyhing after the ".com", the document/query you want to fetch</li>
+              <li>Query Parameter: ?color=blue&amp;view=nice --> These are variables being sent to the server </li>
+              <li>Fragment: #pic_here --> These are used to reference a particular part of the page you're looking at, for caching</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>HTTP (Hypertext Transer Protocol) Requests</h2>
+            <div class="information">
+              <p>HTTP requests and responses are the main way that information is sent to/from servers.  The two most used methods in HTTP for request-response between a client and a server are GETs and POSTs:</p>
+                <p>
+                <ul>
+                  <li>GETs request data from a specified source.  They can:</li>
+                    <ul>
+                      <li>Retrieve parameters from the URL</li>
+                      <li>Fetch documents from the server</li>
+                      <li>It's okay to cache data in a GET request</li>
+                      <li>The max length is the max length of the URL</li>
+                      <li>GETs should never change data on the server</li>
+                    </ul>
+                  <li>POSTs submit data to a server to be processed. They can:</li>
+                    <ul>
+                      <li>Use parameters in the body</li>
+                      <li>Be used for updating data, or making changes to the server</li>
+                      <li>There's no max length</li>
+                      <li>It's not okay to cache data with a POST</li>
+                    </ul>
+                </ul>
+                </p>
+                <p>
+                There are other pieces of information that make up a HTTP Request, like HTTP fields.  HTTP fields are components of the header section of the request, and they define the operating parameters of a HTTP transaction</p>
+            <br>
+            <p>Let's extrapolate the HTTP request from this URL: <code>http://www.example.com/foo</code>
+            <br>
+              Sample Request Line from that URL: <code>GET /foo HTTP/1.1 </code>
+            <ul>
+            <li>Method: GET</li>
+            <li>Path: /foo --> the actual document you want from the server</li>
+            <li>Version: HTTP/1.1</li>
+            </ul>
+            <p>While GETs and POSTs can make requests to the server, the server responds with a Status Line.
+            <br><br>
+              Sample Status Line: <code>HTTP/1.1 200 OK</code>
+            <ul>
+              <li>Version: HTTP/1.1</li>
+              <li>Status code: 200</li>
+              <li>Reason phrase: OK --> Basically what the Status code means</li>
+            </ul>
+            </p>
+            <p>Status codes begin with a 1-5 and are 3 digits. The first digit defines what status class it’s in. <br><br>
+              Common Status Codes:
+            <ul>
+              <li>200s - basically success</li>
+              <li>300s- you need to do something differently technically to find the information</li>
+              <li>400s - error on browser side</li>
+              <li>500s - error on server side</li>
+              <li>200- OK. It means that the document was found.  This is the most common status code</li>
+              <li>302- Found.  The document was found, but it was located somewhere else</li>
+              <li>404- Not Found. The document wasn’t found</li>
+              <li>500- Server Error. The server crashed trying to handle the request</li>
+              </ul>  
+            </p>
+            </ul>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>Validating User Input</h2>
+            <div class="information">
+              <p>Use the HTTP form tag to get input from the user. The form element can contain many of the following elements: input, textarea, button, select, option, label, etc.
+              <br><br>
+                It's possible for a user of a webpage to type html code or other types of code into web forms.  If the browser rendered this as actual code, it could cause havoc for the webpage and for security.  This is called "insertion".  To block against this, you can use the cgi module included within Python, which has escaping in it. That would be done on the server side. Or, you can set autoescape = True in Jinja2, which is a great method for escaping when using Jinja2 templates.
+                <br><br>
+              It is very important to veryify on the server side that what was received from the client is what we expect to receive.  It's simple to put some validation on the client side so we don't blindly use whatever is passed in from the client in our server operations, like HTML escaping.  But, we also need validation on the server side, so that the data in the form is usable for whatever purpose we need it to be.  
+                <br><br>
+                Server side validation is helpful because:
+                <ul>
+                  <li>If the data is not desirable, the server can redirect to an appropriate error page, that helps the user enter data in the correct format</li>
+                  <li>It can prevent crashes from storing bad data on the server</li>
+                  <li>It can also keep the site secure, so that insertion attacks or other attacks are blocked</li>
+                  <li>Server redirection helps to ensure that reloading a page doesn't resubmit the form, and it ensure that there are distinct pages for forms and for successful form submission. </li>
+              </ul>
+            </div>
+          </div>
+          <div class="concept">
+            <h2>HTML Templates and Abstraction</h2>
+            <div class="information">
+              <p>Basic Jinja2 syntax
+              <br>
+              {&#37; statement &#37;}
+              <br>output
+              <br>{&#37; end statement &#37;}
+              <br><br>ex.
+              <br>{&#37; if name==”steve” &#37;}
+              <br>Hello, Steve!
+              <br>{&#37; else &#37;}
+              <br>who are you?
+              <br>{&#37; endif &#37;}
+              <br><br>For loop syntax
+              <br>{&#37; for statement &#37;}
+              <br>body
+              <br>{&#37; endfor &#37;}
+              </p>
+              <br>
+              <p>Jinja2 has built in filters, which are invoked with the "|" character.  But a better way to do it is to autoescape everything:
+                <br><code>jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape = True)</code></p>
+              <br>
+              <p>Programmers use HTML templates because this technology reduces the burden of writing out each piece of HTML.  Repetitive pieces of HTML can be abstracted with template code.  This makes the code easier to read, and easier to debug, saving everyone time.  As well, the webpage can be more dynamic and change depending on server variables being passed to the template, giving the programmer more freedom. Being able to use if statements, for loops, template inheritance, and variables in templates has changed the way programmers code today.
+              </p>
+              <br>
+              <p>Other Helpful Tips:
+              <ul>
+                <li>Always automatically escape variables when possible</li>
+                <li>Minimize code in html templates.  That way it’s easier to debug</li>
+                <li>Minimize html in code, ideally have NO html in code</li>
+              </ul>
+              </p>
+            </div>
+          </div
+        </div>
+        <div>
+        {% for n in data %}
+          {% if n.type_of_note == "Lesson" %}
+          </div>
+            <div class="lesson">
+              <h1>Lesson: {{ n.note_text }}</h1>
+          {% endif %}
+          {% if n.type_of_note == "Concept" %}
+            <div class="concept">
+              <h2>Concept: {{ n.note_text }}</h2>
+            </div>
+          {% endif %}
+          {% if n.type_of_note  == "Information" %}
+          <div class="information">
+            <p>Information: {{ n.note_text }}</p>
+          </div>
+          {% endif %}
+        {% endfor %}
+              </div>
+        </div>
+      </div>
+    </div>
+	</body>
+</html>
