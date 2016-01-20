@@ -406,12 +406,29 @@
                         </ul>
                       </p>
                     </div>
-                    </div
                   </div>
-                  <div>
+                </div>
+      <div class="lesson">
+        <h1>Lesson 4: Exploring on my own</h1>
+        <div class="concept">
+          <h2>Media queries and max widths</h2>
+          <div class="information">
+            <p>
+              Media queries helped me make this site responsive.  I learned a lot about media queries by going through <a class="btn-link" href="https://dash.generalassemb.ly/">general assembly's dash curriculum</a>.  This site features a correct viewport, and breakpoints that make sense for the content being displayed.  At those breakpoints are different font sizes.
+            </p>
+          </div>
+        </div>
+        <div class="concept">
+          <h2>Bootstrap framework</h2>
+          <div class="information">
+            <p>
+              <a class="btn-link" href="http://getbootstrap.com/">Bootstrap</a> is a great framework to pop your website into a grid!  I employed bootstrap on the top part of this website.  Bootstrap helps make the textarea and the submit button flex well.  This helps make the most of the header space.
+            </p>
+          </div>
+        </div>
+     </div>
                     {% for n in data %}
                     {% if n.type_of_note == "Lesson" %}
-                  </div>
                   <div class="lesson">
                     <h1 class="color-green">Lesson: {{ n.note_text }}</h1>
                     {% endif %}
