@@ -1,11 +1,7 @@
+/* styles for the header to be responsive */
 .note-header {
   max-width: 1400px;
   padding-top: 10px;
-}
-
-.instructions {
-  width: 33%;
-  order: 0;
 }
 
 .note-entry {
@@ -13,13 +9,22 @@
   flex-wrap: wrap;
   position: relative;
 }
+
+.instructions {
+  width: 33%;
+  order: 0;
+}
+
 form {
   width: 100%;
   display: inline-block;
 }
+
 box-order {
   order: 0;
 }
+
+/* media queries */
 @media screen and (min-width: 720px) {
   .spiel {
     font-size: 1.25em;

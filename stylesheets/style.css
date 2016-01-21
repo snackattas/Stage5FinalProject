@@ -1,45 +1,41 @@
+/* main styles */
 body {
   margin: 0 auto;
   background: #F1F1F1;
-
-}
-.header-color {
-  background: #D9CECE;
-  margin-top: -20px;
-}
-.centering {
-  max-width: 1000px;
-  min-width: 400px;
-  margin: 20px auto;
-  outline: 0;
-  padding: 20px 80px;
-  vertical-align: baseline;
-  text-align: left;
-}
-.spiel {
-  background: #BFBFBF;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  padding: 0 20px;
-  text-align: justify;
-  font-size: .9em;
-}
-
-.lessons {
-  background: white;
-  margin: 20px auto;
 }
 
 p {
 		font-family: "Trebuchet MS","Helvetica",sans-serif;
-		margin: 0 0 0 10px;
+		margin: 0 10px;
     padding: 10px 0;
 }
 
 li {
     font-family: "Trebuchet MS","Helvetica",sans-serif;
     font-weight: lighter;
+}
+
+h1 {
+  font-size: 1.25em;
+  margin-left: -8%;
+  padding: .75% 3%;
+  background-color: brown;
+  color: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  display: inline-block;
+}
+
+h1.color-green { /* used for lessons added by users */
+  background-color: green;
+}
+
+h2 {
+  background: #BFBFBF;
+  font-size: 1.1em;
+  padding: 1%;
+  margin: 0 auto;
 }
 
 .code {
@@ -49,6 +45,45 @@ li {
   background-color: black;
   color: green;
   padding: 5px;
+}
+
+.centering {
+  max-width: 1000px;
+  min-width: 400px;
+  margin: 20px auto;
+  outline: 0;
+  padding: 20px 80px;
+  vertical-align: baseline;
+  text-align: left;
+}
+
+.lessons {
+  background: white;
+  margin: 20px auto;
+}
+
+.information {
+  background: #F1F1F1;
+  font-size: .9em;
+  text-align: justify;
+  padding: 2%;
+}
+
+
+/* classes only used once */
+.header-color {
+  background: #D9CECE;
+  margin-top: -20px;
+}
+
+.spiel { 
+  background: #BFBFBF;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 0 20px;
+  text-align: justify;
+  font-size: .9em;
 }
 
 .space2 {
@@ -74,42 +109,16 @@ li {
   font-size: .7em;
   display: inline-block;
 }
+
 .text-big {
   font-weight: bold;
   font-size: 1.3em;
-}
-h1 {
-  font-size: 1.25em;
-  margin-left: -8%;
-  padding: .75% 3%;
-  background-color: brown;
-  color: white;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  display: inline-block;
-}
-h1.color-green {
-  background-color: green;
-}
-
-h2 {
-  background: #BFBFBF;
-  font-size: 1.1em;
-  padding: 1%;
-  margin: 0 auto;
-}
-
-.information {
-  background: #F1F1F1;
-  font-size: .9em;
-  text-align: justify;
-  padding: 2%;
 }
 
 .no-justify {
   text-align: left;
 }
+
 .margin-fix {
   margin-top: 12px;
 }
