@@ -3,4 +3,4 @@ This is my final project for the [Intro to Programming Udacity Course](https://w
 
 The project is now live via Google App Engine! Check it out here:
 
-`<a href="http://first-project-1062.appspot.com/">http://first-project-1062.appspot.com/</a>`
+`[http://first-project-1062.appspot.com/]: http://first-project-1062.appspot.com/`
